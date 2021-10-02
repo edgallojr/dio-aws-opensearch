@@ -3,17 +3,17 @@ Motor de busca com o Amazon Elasticsearch, trabalhando com a Stack ELK (Elastics
 
 Amazon Opensearch (sucessor do Elasticsearch)
 
-## Servi?os utilizados
+## Serviços utilizados
 - EC2 (servidor de logs)
 - Kinesis Data Firehose (stream de dados)
-- Elasticsearch (pesquisa e visualiza??o dos dados)
+- Elasticsearch (pesquisa e visualização dos dados)
 
-## Configura??es
+## Configurações
 
-### Iniciar inst?ncia no EC2
+### Iniciar instância no EC2
 - EC2 Console -> Launch instances -> Amazon Linux 2 AMI (HVM), SSD Volume Type -> t2.micro -> Review and launch -> Create a new key pair -> download da chave ssh
-- Acessar com aplica??o SSH
-- Utilizar o comando ```wget``` para obter os arquivos de logs que est?o no seguinte link: https://dio-live-elasticsearch-data.s3.amazonaws.com/httpd.zip
+- Acessar com aplicação SSH
+- Utilizar o comando ```wget``` para obter os arquivos de logs que estão no seguinte link: https://dio-live-elasticsearch-data.s3.amazonaws.com/httpd.zip
 - Descompactar o arquivo .zip com o comando ```unzip httpd.zip```
 - Mover a pasta descompactada com o comando ```sudo mv htppd /var/log/httpd```
 
@@ -22,9 +22,9 @@ Amazon Opensearch (sucessor do Elasticsearch)
 
 ### Configurar cluster do Elasticsearch
 
-- Open Search (sucessor do Elasticsearch) -> Create new domain  -> Type: development and testing -> version 7.10 -> Next -> Domain name [seu_nome_de_dominio] -> manter o restante das configura??es como padr?o -> Next
+- Open Search (sucessor do Elasticsearch) -> Create new domain  -> Type: development and testing -> version 7.10 -> Next -> Domain name [seu_nome_de_dominio] -> manter o restante das configurações como padrão -> Next
 - Selecionar Public Access -> Desabilitar Fine grained access control -> Access Policy -> Custom Access Policy -> IPV4 address [sei IP] -> Allow
-- Manter o restante das configura??es padr?o -> Next -> Create Domain
+- Manter o restante das configurações padrão -> Next -> Create Domain
 
 ### Configurar o Kinesis Data Stream
 
@@ -36,7 +36,7 @@ Amazon Opensearch (sucessor do Elasticsearch)
   - Table name parameter -> weblogs
   - Deploy
   - OBS: utiliza o Cloudformation
-  - Atualizar o timeout da fun??o lambda para 1 minuto
+  - Atualizar o timeout da função lambda para 1 minuto
 - Destination
   - Elasticsearch domain (aguardar o processamento do dom?nio)
   - Index -> weblogs
@@ -84,6 +84,6 @@ Amazon Opensearch (sucessor do Elasticsearch)
 
 - Deletar Delivery Stream
 - Deletar domain do Elasticsearch
-- Deletar fun??o lambda
+- Deletar função lambda
 - Deletar bucket do S3
-- Encerrar inst?ncia no EC2
+- Encerrar instância no EC2
