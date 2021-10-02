@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/85174365/135697977-7018bd23-e82a-4b11-8d2d-6e3344880c22.png)
+
+
 # dio-aws-opensearch
 Motor de busca com o Amazon Elasticsearch, trabalhando com a Stack ELK (Elasticsearch, Logstash e Kibana) e Kinesis.
 
